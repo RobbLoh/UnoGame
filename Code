@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+typedef struct card_s {
+char color[7];
+int value;
+char action[15];
+
+struct card_s *pt;
+} card;
+void shuffle(card cardArr[]); //shuffle deck
+void splitHand(card cardArr[], int players); // split deck
+
+
+
+
+void shuffle(card cardArr[]){
+    
+    
+    
+    
+}
+int main(){
+  
+    char startup ='y';
+    card cardArr[108];
+    int players;
+    
+    printf("Welcome to Uno!\n");
+       // sleep(3);
+    while(startup == 'y'){
+        
+        printf("\nPlease select how many players you want from 1-10:\t");
+        scanf("%d", &players);
+        while(players <1 || players >10){
+            printf("Enter between: 1-10 players. %d is out of accepted range.\t", players);
+            scanf("%d", &players);
+        }
+        printf("\n%d players selected.\n", players);
+        // Calling function
+        shuffle(cardArr);
+        
+        
+        
+        //
+        printf("Do you want to play again <y/n>?\t");
+        scanf(" %c", &startup);
+    
+    
+    }
+    printf("Goodbye!");
+    
+    
+    
+    
+    return 0;
+}
